@@ -1,15 +1,15 @@
 Package: timeseries-tools
 Type: Package
-Title: Tools for non-stationary, fractal and lnog memory timeseries
+Title: Tools for non-stationary, fractal, and long memory time series
 Version: 0.0.1
 Authors@R: c(
     person(
       "emm-n", "m",
-      email = "emm.n.balck@gmail.com",
+      email = "emm.n.black@gmail.com",
       role = c("aut", "cre")
     )
   )
-Description: Collection of stuff I make to process things with memory and often non-statioaruty 
+Description: Collection of stuff I make to process things with memory and often non-stationary 
 License: MIT
 Encoding: UTF-8
 LazyData: true
