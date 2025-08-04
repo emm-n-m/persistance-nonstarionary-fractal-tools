@@ -1,0 +1,1 @@
+A collection of things I make while exploring processes that exhibit long-term memory, non-stationarity, and other nasty stuff like self-similarity. I am surprised that I could not find tools for these because everything falls under these categories..
