@@ -1,16 +1,15 @@
-Package: hktest
+Package: timeseries-tools
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
+Title: Tools for non-stationary, fractal, and long memory time series
+Version: 0.0.1
 Authors@R: c(
     person(
-      "Jane", "Doe",
-      email = "jane@example.com",
+      "emm-n", "m",
+      email = "emm.n.black@gmail.com",
       role = c("aut", "cre")
     )
   )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
-License: What license is it under?
+Description: Collection of stuff I make to process things with memory and often non-stationary 
+License: MIT
 Encoding: UTF-8
 LazyData: true
