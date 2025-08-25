@@ -1,4 +1,13 @@
-.Rproj.user
+# R History and Environment
 .Rhistory
 .RData
 .Ruserdata
+.Rproj.user/
+
+# R Session Data
+.Rapp.history
+.Renviron
+.Rprofile
+
+data/
+
