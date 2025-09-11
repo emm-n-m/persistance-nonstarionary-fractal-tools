@@ -1,3 +1,12 @@
+# Copyright (c) 2025 [Emmanouil Mavrogiorgis, emm.n.black@gmail.com]
+# All rights reserved.
+#
+# This project was developed with assistance from Claude Code by Anthropic.
+# Claude Code is an AI-powered coding assistant (https://www.anthropic.com).
+#
+# Licensed under MIT License
+# See LICENSE file for details
+
 # Generalized Time Series Regime Change Detection - Pure Analytics
 # Detects changes in statistical properties: mean, variance, trend, correlation structure
 # Operates on pre-loaded data from csv_reader_tool.R

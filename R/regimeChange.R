@@ -1,3 +1,12 @@
+# Copyright (c) 2025 [Emmanouil Mavrogiorgis, emm.n.black@gmail.com]
+# All rights reserved.
+#
+# This project was developed with assistance from Claude Code by Anthropic.
+# Claude Code is an AI-powered coding assistant (https://www.anthropic.com).
+#
+# Licensed under MIT License
+# See LICENSE file for details
+
 # Focused Regime Change Detection for Reservoir Data
 # Specifically designed to detect the 2022 drought transition
 
