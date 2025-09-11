@@ -54,7 +54,7 @@ class DerivativeAnalyzer:
         
         # Ensure time column is datetime
         if not pd.api.types.is_datetime64_any_dtype(self.data[time_column]):
-            self.data[time_column] = pd.to_datetime(self.data[time_column])
+            self.data[time_column] = pd.to_datetime(self.data[time_column], format='mixed', dayfirst=True)
             
     def calculate_derivative_metrics(self, 
                                    series_name: Optional[str] = None,

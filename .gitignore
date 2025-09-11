@@ -10,4 +10,5 @@
 .Rprofile
 
 data/
-
+results/
+Python/__pycache__
