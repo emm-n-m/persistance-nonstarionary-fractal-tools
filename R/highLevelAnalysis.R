@@ -1,5 +1,4 @@
 # Transparent Hurst-Kolmogorov Process Simulation
-# Based on published mathematical methods - no black boxes!
 
 library(tidyverse)
 
