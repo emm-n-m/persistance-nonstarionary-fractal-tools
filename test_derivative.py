@@ -1,10 +1,21 @@
 #!/usr/bin/env python3
 
-import pandas as pd
-import sys
 import os
+import sys
 import json
 from datetime import datetime
+
+try:
+    import pandas as pd
+except ModuleNotFoundError:  # pragma: no cover - handled explicitly below
+    try:
+        import pytest
+    except ModuleNotFoundError as exc:  # pragma: no cover - pytest absent
+        raise ModuleNotFoundError("pandas is required to run this script") from exc
+
+    pytest.skip(
+        "pandas is required for derivative analysis smoke test", allow_module_level=True
+    )
 
 # Add Python directory to path
 sys.path.append(os.path.join(os.path.dirname(__file__), 'Python'))
