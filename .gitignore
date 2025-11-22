@@ -9,6 +9,38 @@
 .Renviron
 .Rprofile
 
+# Data and Results
 data/
 results/
+
+# Output directory - ignore contents but keep directory
+output/*
+!output/README.md
+
+# Python
 Python/__pycache__
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
