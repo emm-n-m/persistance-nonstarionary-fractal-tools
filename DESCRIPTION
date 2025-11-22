@@ -1,15 +1,42 @@
-Package: timeseries-tools
+Package: timeseries.tools
 Type: Package
-Title: Tools for non-stationary, fractal, and long memory time series
+Title: Tools for Non-Stationary, Fractal, and Long Memory Time Series
 Version: 0.0.1
-Authors@R: c(
-    person(
-      "emm-n", "m",
-      email = "emm.n.black@gmail.com",
-      role = c("aut", "cre")
-    )
-  )
-Description: Collection of stuff I make to process things with memory and often non-stationary 
-License: MIT
+Authors@R: person("Emmanouil", "Mavrogiorgis",
+                  email = "emm.n.black@gmail.com",
+                  role = c("aut", "cre"),
+                  comment = c(ORCID = ""))
+Description: A comprehensive toolkit for analyzing time series exhibiting
+    long-range dependence, non-stationarity, and fractal properties. Provides
+    functions for Hurst-Kolmogorov process analysis, regime change detection,
+    derivative pattern analysis, and simulation of fractional Brownian motion.
+    Includes multiple methods for changepoint detection (variance, mean, trend,
+    correlation) and nth-order derivative computation with regime identification.
+License: MIT + file LICENSE
+URL: https://github.com/emm-n-m/persistance-nonstarionary-fractal-tools
+BugReports: https://github.com/emm-n-m/persistance-nonstarionary-fractal-tools/issues
 Encoding: UTF-8
 LazyData: true
+Depends:
+    R (>= 4.0.0)
+Imports:
+    dplyr (>= 1.0.0),
+    tidyr (>= 1.1.0),
+    tibble (>= 3.0.0),
+    ggplot2 (>= 3.3.0),
+    lubridate (>= 1.7.0),
+    fracdiff (>= 1.5.0),
+    longmemo (>= 1.1.0),
+    wavelets (>= 0.3.0),
+    forecast (>= 8.13),
+    tseries (>= 0.10.0),
+    readr (>= 2.0.0),
+    stringr (>= 1.4.0)
+Suggests:
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown,
+    covr
+VignetteBuilder: knitr
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.0
