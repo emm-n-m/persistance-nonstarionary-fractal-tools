@@ -1,0 +1,146 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "timeseries-tools"
+version = "0.0.1"
+description = "Tools for non-stationary, fractal, and long memory time series analysis"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Emmanouil Mavrogiorgis", email = "emm.n.black@gmail.com"}
+]
+keywords = [
+    "time-series",
+    "hurst-exponent",
+    "regime-change",
+    "fractal",
+    "long-memory",
+    "non-stationary",
+    "derivative-analysis"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+
+dependencies = [
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "mypy>=1.4.0",
+    "ipython>=8.0.0",
+]
+
+timeseries = [
+    "statsmodels>=0.14.0",
+    "arch>=6.0.0",
+    "tsfresh>=0.20.0",
+    "ruptures>=1.1.8",
+    "nolds>=0.5.2",
+    "PyWavelets>=1.4.1",
+    "scikit-learn>=1.3.0",
+]
+
+viz = [
+    "plotly>=5.15.0",
+    "jupyter>=1.0.0",
+    "jupyter-lab>=4.0.0",
+    "ipywidgets>=8.0.0",
+]
+
+all = [
+    "timeseries-tools[dev,timeseries,viz]",
+]
+
+[project.urls]
+Homepage = "https://github.com/emm-n-m/persistance-nonstarionary-fractal-tools"
+Repository = "https://github.com/emm-n-m/persistance-nonstarionary-fractal-tools"
+Issues = "https://github.com/emm-n-m/persistance-nonstarionary-fractal-tools/issues"
+
+[tool.setuptools]
+packages = ["timeseries_tools"]
+
+[tool.setuptools.package-dir]
+timeseries_tools = "Python"
+
+[tool.black]
+line-length = 88
+target-version = ['py38', 'py39', 'py310', 'py311']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | output
+  | data
+  | results
+)/
+'''
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_functions = "test_*"
+addopts = "-v --tb=short --strict-markers"
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+ignore_missing_imports = true
+exclude = [
+    "output/",
+    "data/",
+    "results/",
+]
+
+[tool.coverage.run]
+source = ["timeseries_tools"]
+omit = [
+    "*/tests/*",
+    "*/test_*.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]
