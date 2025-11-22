@@ -16,6 +16,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
+from pathlib import Path
 from derivative_analysis import analyze_derivative_patterns, DerivativeAnalyzer
 
 def create_sample_data():
@@ -220,9 +221,14 @@ def create_visualization_example(data, velocity_results):
         axes[1, 1].set_xlabel('Positive Fraction')
     
     plt.tight_layout()
-    plt.savefig('C:/Users/emaur/OneDrive/Έγγραφα/Personal Projects/Stohastic Processes/Tools/Python/derivative_analysis_example.png', 
-                dpi=300, bbox_inches='tight')
-    print("Saved visualization to 'derivative_analysis_example.png'")
+
+    # Create output directory if it doesn't exist
+    output_dir = Path(__file__).parent.parent / 'output'
+    output_dir.mkdir(exist_ok=True)
+
+    output_path = output_dir / 'derivative_analysis_example.png'
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    print(f"Saved visualization to '{output_path}'")
     plt.show()
 
 def main():

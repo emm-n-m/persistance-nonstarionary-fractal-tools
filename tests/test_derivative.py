@@ -18,7 +18,8 @@ except ModuleNotFoundError:  # pragma: no cover - handled explicitly below
     )
 
 # Add Python directory to path
-sys.path.append(os.path.join(os.path.dirname(__file__), 'Python'))
+python_dir = os.path.join(os.path.dirname(__file__), '..', 'Python')
+sys.path.insert(0, python_dir)
 
 from derivative_analysis import analyze_derivative_patterns, DerivativeAnalyzer
 
@@ -101,9 +102,10 @@ def save_results_to_files(results, output_dir='results'):
 
 def test_derivative_analysis():
     print("Testing derivative_analysis.py with water_reserves.csv")
-    
-    # Load the data
-    data_path = os.path.join('data', 'water_reserves.csv')
+
+    # Load the data (path relative to project root)
+    project_root = os.path.dirname(os.path.dirname(__file__))
+    data_path = os.path.join(project_root, 'data', 'water_reserves.csv')
     print(f"Loading data from: {data_path}")
     
     try:
