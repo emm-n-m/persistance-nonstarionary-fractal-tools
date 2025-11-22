@@ -5,12 +5,14 @@ This package provides tools for:
 - Hurst exponent estimation (rescaled range method)
 - Derivative pattern analysis (nth-order derivatives with regime detection)
 - Climacogram analysis (variance scaling properties)
+- EEG data loading and analysis (long-range correlations)
 - Example workflows and utilities
 
 Modules:
     hurst: Hurst exponent estimation using rescaled range (R/S) method
     derivative_analysis: Comprehensive nth-order derivative analysis
     climacogram: Climacogram computation and visualization
+    eeg_loader: Generic EEG data loader and analyzer (CSV, EDF formats)
     example_usage: Example workflows and demonstrations
 
 Author: Emmanouil Mavrogiorgis
@@ -53,6 +55,17 @@ except ImportError:
     plot_climacogram = None
     analyze_reservoir_climacogram = None
 
+try:
+    from .eeg_loader import (
+        EEGLoader,
+        EEGAnalyzer,
+        quick_analysis,
+    )
+except ImportError:
+    EEGLoader = None
+    EEGAnalyzer = None
+    quick_analysis = None
+
 # Define what's available when using "from timeseries_tools import *"
 __all__ = [
     # Version info
@@ -71,6 +84,10 @@ __all__ = [
     "compute_climacogram",
     "plot_climacogram",
     "analyze_reservoir_climacogram",
+    # EEG analysis
+    "EEGLoader",
+    "EEGAnalyzer",
+    "quick_analysis",
 ]
 
 
@@ -88,6 +105,8 @@ def show_info():
     print("  - hurst: Hurst exponent estimation")
     print("  - derivative_analysis: Derivative pattern analysis")
     print("  - climacogram: Variance scaling analysis")
+    print("  - eeg_loader: EEG data loading and analysis (CSV, EDF)")
     print("\nFor help on a specific module:")
     print("  import timeseries_tools")
     print("  help(timeseries_tools.hurst_rs)")
+    print("  help(timeseries_tools.EEGLoader)")
