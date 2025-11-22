@@ -24,9 +24,28 @@ __pycache__/
 *$py.class
 *.so
 .Python
+
+# Python packaging
 *.egg-info/
+*.egg
 dist/
 build/
+wheels/
+*.whl
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
 
 # Virtual environments
 venv/
