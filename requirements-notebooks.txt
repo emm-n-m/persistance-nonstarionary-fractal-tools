@@ -1,0 +1,25 @@
+# Jupyter Notebook Dependencies
+# For interactive exploration of time series data
+#
+# Install with: pip install -r requirements-notebooks.txt
+#
+# Or use: pip install -e ".[all]" to install everything
+
+# Core notebook environment
+jupyter>=1.0.0
+jupyterlab>=4.0.0
+ipython>=8.0.0
+ipywidgets>=8.0.0
+
+# Already in pyproject.toml [dependencies]
+# but listed here for standalone notebook use
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.10.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Optional but useful for notebooks
+# (already in pyproject.toml [project.optional-dependencies])
+plotly>=5.15.0  # Interactive plots
+mne>=1.5.0      # EEG file support (EDF)

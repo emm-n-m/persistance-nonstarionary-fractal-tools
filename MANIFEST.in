@@ -1,0 +1,31 @@
+# Include documentation
+include README.md
+include LICENSE
+include DESCRIPTION
+
+# Include Python requirements
+include Python/requirements.txt
+include Python/PYTHON_SETUP_GUIDE.md
+
+# Include tests
+recursive-include tests *.py
+
+# Exclude unnecessary files
+exclude .gitignore
+recursive-exclude * __pycache__
+recursive-exclude * *.py[cod]
+recursive-exclude * *.so
+recursive-exclude * .DS_Store
+
+# Exclude R files (this is a Python package)
+exclude *.Rproj
+exclude load_tools.R
+exclude example_workflow.R
+recursive-exclude R *
+recursive-exclude man *
+recursive-exclude renv *
+
+# Exclude data and output directories
+recursive-exclude data *
+recursive-exclude results *
+recursive-exclude output *
